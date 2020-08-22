@@ -1,0 +1,153 @@
+<mxfile host="embed.diagrams.net" modified="2020-08-22T15:49:40.231Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.48.1 Chrome/78.0.3904.130 Electron/7.3.2 Safari/537.36" etag="NiEk85Dz4T_JMNMHxRRK" version="13.6.4">
+    <diagram id="6hGFLwfOUW9BJ-s0fimq" name="Page-1">
+        <mxGraphModel dx="630" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="59" value="" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="240" width="280" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="SP.実行フラグ = 0 の URL に対して&lt;br&gt;Lighthouse実行 → DB更新" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="254" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="95" width="480" height="95" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="URL" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="140" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="SP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="110" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="PC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="110" width="210" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/database.svg;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="80" width="50" height="37" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontColor=#000000;startArrow=classic;startFill=1;" edge="1" parent="1" source="17" target="15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="240" width="370" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="検索" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="195" y="260" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="URL検索" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="55" y="260" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#DEE2E6;html=1;whiteSpace=wrap;fillColor=#ffffff;fontColor=#0085FC;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="348" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;&lt;" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.leftButton;rSize=5;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="22">
+                    <mxGeometry width="30" height="30" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="1" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="22">
+                    <mxGeometry width="30" height="30" relative="1" as="geometry">
+                        <mxPoint x="30" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="2" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="22">
+                    <mxGeometry width="30" height="30" relative="1" as="geometry">
+                        <mxPoint x="60" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="3" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="22">
+                    <mxGeometry width="30" height="30" relative="1" as="geometry">
+                        <mxPoint x="90" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="&gt;&gt;" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rightButton;rSize=5;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="22">
+                    <mxGeometry x="1" width="30" height="30" relative="1" as="geometry">
+                        <mxPoint x="-30" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#DEE2E6;html=1;whiteSpace=wrap;fillColor=#ffffff;fontColor=#0085FC;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="560" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="&lt;&lt;" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.leftButton;rSize=5;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="28">
+                    <mxGeometry width="30" height="30" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="1" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="28">
+                    <mxGeometry width="30" height="30" relative="1" as="geometry">
+                        <mxPoint x="30" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="2" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="28">
+                    <mxGeometry width="30" height="30" relative="1" as="geometry">
+                        <mxPoint x="60" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="32" value="3" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="28">
+                    <mxGeometry width="30" height="30" relative="1" as="geometry">
+                        <mxPoint x="90" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="33" value="&gt;&gt;" style="strokeColor=inherit;fillColor=inherit;gradientColor=inherit;fontColor=inherit;html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rightButton;rSize=5;perimeter=none;whiteSpace=wrap;resizeHeight=1;fontSize=14;" vertex="1" parent="28">
+                    <mxGeometry x="1" width="30" height="30" relative="1" as="geometry">
+                        <mxPoint x="-30" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width: 100% ; height: 100% ; border-collapse: collapse&quot;&gt;&lt;tbody&gt;&lt;tr style=&quot;background-color: #a7c942 ; color: #ffffff ; border: 1px solid #98bf21&quot;&gt;&lt;th align=&quot;left&quot;&gt;ID&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;URL&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;SP&lt;/th&gt;&lt;td&gt;PC&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;&lt;font color=&quot;#000000&quot;&gt;1&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;font color=&quot;#000000&quot;&gt;https://...&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;font color=&quot;#6666ff&quot;&gt;&lt;u&gt;閲覧&lt;/u&gt;&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;u style=&quot;color: rgb(102 , 102 , 255)&quot;&gt;閲覧&lt;/u&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;&lt;font color=&quot;#000000&quot;&gt;2&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;span style=&quot;color: rgb(0 , 0 , 0)&quot;&gt;https://...&lt;/span&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;u style=&quot;color: rgb(102 , 102 , 255) ; background-color: rgb(248 , 249 , 250)&quot;&gt;閲覧&lt;/u&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;u style=&quot;color: rgb(102 , 102 , 255) ; background-color: rgb(248 , 249 , 250)&quot;&gt;閲覧&lt;/u&gt;&lt;font color=&quot;#000000&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px solid #98bf21&quot;&gt;&lt;td&gt;&lt;font color=&quot;#000000&quot;&gt;3&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;span style=&quot;color: rgb(0 , 0 , 0)&quot;&gt;https://...&lt;/span&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;font color=&quot;#000000&quot;&gt;ー&lt;/font&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;font color=&quot;#000000&quot;&gt;ー&lt;br&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;background-color: #eaf2d3 ; border: 1px solid #98bf21&quot;&gt;&lt;td&gt;&lt;font color=&quot;#000000&quot;&gt;4&lt;/font&gt;&lt;/td&gt;&lt;td&gt;&lt;font color=&quot;#000000&quot;&gt;https://...&lt;/font&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;span style=&quot;color: rgb(0 , 0 , 0)&quot;&gt;ー&lt;/span&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;font color=&quot;#000000&quot;&gt;ー&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;strokeColor=#c0c0c0;fillColor=#ffffff;overflow=fill;rounded=0;fontColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="390" width="280" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="curved=1;endArrow=classic;html=1;fontColor=#B3B3B3;exitX=0.893;exitY=0.313;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="35" target="37">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="350" y="420" as="sourcePoint"/>
+                        <mxPoint x="400" y="370" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="400" y="420"/>
+                            <mxPoint x="350" y="370"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="37" value="&lt;font color=&quot;#000000&quot;&gt;Lighthouse&lt;br&gt;実行結果ページ&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Front_Doors.svg;" vertex="1" parent="1">
+                    <mxGeometry x="35" y="210" width="50" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="URL追加" style="rounded=1;whiteSpace=wrap;html=1;fontColor=#B3B3B3;" vertex="1" parent="1">
+                    <mxGeometry x="55" y="300" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="追加" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+                    <mxGeometry x="195" y="300" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="URLリストアップロード" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="300" width="150" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="CSVでURLを追加可能に" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;fontColor=#000000;base=13;size=10;position=0.58;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="250" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="実行結果（スコア等）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="80" y="140" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="実行フラグ" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="140" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="実行結果（スコア等）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="140" width="140" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="実行フラグ" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="140" width="70" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="PC.実行フラグ = 0 の URL に対して&lt;br&gt;Lighthouse実行 → DB更新" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="314" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=none;startFill=0;fontColor=#000000;" edge="1" parent="1" source="57" target="52">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="node-cron 等で定期実行" style="rounded=0;whiteSpace=wrap;html=1;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="400" width="240" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontColor=#000000;startArrow=classic;startFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="59" target="15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn2.iconfinder.com/data/icons/amazon-aws-stencils/100/SDKs_copy_nodeJS-128.png;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="205" width="54" height="54" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
