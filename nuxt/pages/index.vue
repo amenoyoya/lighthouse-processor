@@ -8,14 +8,7 @@
         <input type="text" class="w-4/5 border p-2" placeholder="検索URL" v-model="keyword" />
         <button type="submit" class="p-2 bg-blue-400 text-white rounded-md">検索</button>
       </form>
-      <form class="flex-row flex-wrap mt-4" @submit.prevent="appendURL">
-        <input type="text" class="w-3/5 border p-2" placeholder="追加URL" v-model="url" />
-        <button type="submit" class="p-2 bg-green-400 text-white rounded-md">追加</button>
-        <label class="inline-block p-2 bg-purple-400 text-white rounded-md cursor-pointer">
-          URLリストアップロード
-          <input type="file" class="hidden" @change.prevent="onChangeFile" />
-        </label>
-      </form>
+      <UrlUploader />
     </div>
     <table class="table-auto">
       <thead>

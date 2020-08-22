@@ -40,6 +40,9 @@ $ chmod +x ./n
 $ export UID && docker-compose build
 $ docker-compose up -d
 
+# create mongodb collection: lighthouse
+$ curl -X PUT -u 'admin:secret' http://localhost:8080/lighthouse/
+
 # start nuxt dev server
 $ opt='-w /work/nuxt' ./n yarn dev
 
