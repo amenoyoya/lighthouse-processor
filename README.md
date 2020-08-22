@@ -12,16 +12,14 @@
 
 ![design.png](./img/design.png)
 
-- DB: MongoDB
-    - DB Server: http://localhost:27017
-        - dockerhub: `mongo:4.4`
-    - DB Control Panel: http://localhost:8081
-        - dockerhub: `mongo-express:latest`
+- DB: MongoDB (NeDB)
     - REST API Server: http://localhost:8080
-        - dockerhub: `softinstigate/restheart:5.1.1`
+        - node-module: `express-nedb-rest`
+        - [./db/](./db/)
 - Frontend: http://localhost:3000
     - Nuxt.js
     - Tailwind.css
+    - [./nuxt/](./nuxt/)
 - Backend:
     - Node.js
         - lighthouse: Lighthouse計測CLI
@@ -29,24 +27,13 @@
 
 ### Setup
 ```bash
-# add execution permission to ./n
-$ chmod +x ./n
+# install node_modules in ./ , ./db/ , ./nuxt/
+$ yarn setup
 
-# setup and start docker containers
-## node command: service://cli in localhost network
-## mongodb server: service://db:27017 => http://localhost:27017
-## mongodb express server: service://admin:8081 => http://localhost:8081
-## mongodb rest api server: service://restheart:8080 => http://localhost:8080
-$ export UID && docker-compose build
-$ docker-compose up -d
-
-# create mongodb collection: lighthouse
-$ curl -X PUT -u 'admin:secret' http://localhost:8080/lighthouse/
-
-# start nuxt dev server
-$ opt='-w /work/nuxt' ./n yarn dev
-
-# => http://localhost:3000/
+# start servers
+## nuxt dev server => http://localhost:3000
+## nedb rest api server => http://localhost:8080
+$ yarn start
 ```
 
 ### Memo
@@ -54,8 +41,7 @@ Nuxt.js プロジェクト作成時のパラメータ
 
 ```bash
 # create nuxt project => ./nuxt/
-## $ docker-compose run node npx create-nuxt-app nuxt
-$ ./n npx create-nuxt-app nuxt
+$ npx create-nuxt-app nuxt
 
 # Project name: nuxt
 # Programming language: JavaScript

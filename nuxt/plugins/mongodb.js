@@ -142,7 +142,7 @@ class RestHeart {
     this.config = {
       user: config.user? config.user: 'admin',
       password: config.password? config.password: 'secret',
-      url: 'http://localhost:8080',
+      url: config.url? config.url: 'http://localhost:8080',
     }
   }
 

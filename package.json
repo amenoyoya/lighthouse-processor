@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "setup": "yarn install && yarn --cwd db install && yarn --cwd nuxt install",
+    "start": "concurrently 'yarn --cwd db start' 'yarn --cwd nuxt dev'"
+  },
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
