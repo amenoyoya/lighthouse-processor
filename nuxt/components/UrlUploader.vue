@@ -10,17 +10,13 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
       url: '',
     }
-  },
-  mounted() {
-    // MongoDB REST API Server 接続
-    this.$initializeMongoDB({
-      url: 'http://127.0.0.1:8080',
-    })
   },
   methods: {
     /**
@@ -29,6 +25,7 @@ export default {
     async uploadURL() {
       if (this.url.length === 0) {
         alert('URLを指定してください')
+        return false
       }
       await this.uploadURLs([this.url])
     },
@@ -56,24 +53,30 @@ export default {
      * @param {string[]} urls
      */
     async uploadURLs(urls) {
-      const res = await this.$mongodb().ref('lighthouse')
-        .push(this.convertURLs(urls))
-      alert('URLが追加されました')
+      try {
+        await axios.post(
+          'http://localhost:8080/lighthouse',
+          this.convertURLs(urls)
+        )
+        window.location.href = '/' + window.location.search // ページリロード
+      } catch (err) {
+        console.log('データベースへの登録に失敗しました')
+      }
     },
 
     /**
      * URLリストをJSON形式に変換
      * @param {string[]} urls
-     * @return {object{url, sp, pc}[]}
+     * @return {object{url, sp, pc, created}[]}
      */
     convertURLs(urls) {
       const list = []
-      for (const url of urls) {
+      for (const [index, url] of urls.entries()) {
         if (url.length === 0) {
           continue
         }
         list.push({
-          url, sp: false, pc: false
+          url, sp: false, pc: false, created: Date.now() + index
         })
       }
       return list
