@@ -1,10 +1,10 @@
 <template>
   <div class="mt-4">
-    <p>{{ list.start }} - {{ list.end }} / {{ list.count }} 件</p>
-    <table class="mt-2 w-full table-auto">
+    <Paginator baseURL="/" :pager="list" />
+    <table class="mt-4 w-full table-fixed break-words">
       <thead>
         <tr class="border bg-teal-200">
-          <th>URL</th><th>SP</th><th>PC</th><th>操作</th>
+          <th class="w-1/2">URL</th><th>SP</th><th>PC</th><th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -18,6 +18,9 @@
         </tr>
       </tbody>
     </table>
+    <div class="mt-4 mb-4">
+      <Paginator baseURL="/" :pager="list" />
+    </div>
   </div>
 </template>
 
@@ -53,6 +56,7 @@ export default {
         }`)
       ).data
       // カレントページのデータ取得位置
+      list.page = query.page? parseInt(query.page): 1
       list.start = list.items.length === 0? 0: (query.page > 0? (query.page - 1) * 50 + 1: 1)
       // カレントページのデータリスト最後の位置
       list.end = list.items.length === 0? 0: list.start + list.items.length - 1
