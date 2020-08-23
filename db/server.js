@@ -5,12 +5,6 @@ const expressNedbRest = require('express-nedb-rest')
 
 // setup express app
 const app = express()
-const process = {}
-
-// generate random string
-const randstr = length => {
-  return randomBytes(length).reduce((p, i) => p + (i % 36).toString(36), '')
-}
 
 // accept CORS
 app.use(cors())

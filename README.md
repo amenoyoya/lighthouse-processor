@@ -2,9 +2,14 @@
 
 ## Environment
 
+- OS:
+    - Windows 10
+    - Ubuntu 20.08
 - Shell: bash
-- Docker: 19.03.12
-    - docker-compose: 1.26.0
+- Browser: Google Chrome
+    - ※ Lighthouse の実行に必要なためインストール必須
+- Node.js: 12.14.1
+    - Yarn package manager: 1.21.1
 
 ***
 
@@ -22,8 +27,9 @@
     - [./nuxt/](./nuxt/)
 - Backend:
     - Node.js
-        - lighthouse: Lighthouse計測CLI
-        - node-cron: プログラム定期実行
+        - lighthouse: Lighthouse計測CLI (要: Google Chrome)
+        - node-schedule: プログラム定期実行
+        - [./backend/](./backend/)
 
 ### Setup
 ```bash
@@ -33,6 +39,7 @@ $ yarn setup
 # start servers
 ## nuxt dev server => http://localhost:3000
 ## nedb rest api server => http://localhost:8080
+## backend cron scheduler => localhost
 $ yarn start
 ```
 
