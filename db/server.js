@@ -9,12 +9,12 @@ const app = express()
 // accept CORS
 app.use(cors())
 
-// create NeDB datastore
-const datastore = new nedb({filename: './lighthouse.db',  autoload: true})
-
 // create rest api router and connect it to datastore  
 const restApi = expressNedbRest()
-restApi.addDatastore('lighthouse', datastore)
+restApi.addDatastore('lighthouse', new nedb({
+  filename: './lighthouse.db',
+  autoload: true
+}))
 
 // setup express server to serve rest service
 app.use('/api/', restApi)

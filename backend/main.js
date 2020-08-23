@@ -1,11 +1,11 @@
 const lighthouse = require('lighthouse')
 const chromeLauncher = require('chrome-launcher')
 const fs = require('fs')
-const nedb = require('nedb-promises')
+const axios = require('axios')
 const cron = require('node-schedule')
 
-// create NeDB datastore
-const db = new nedb({filename: '../db/lighthouse.db',  autoload: true})
+// NeDB REST API endpoint
+const endpoint = 'http://localhost:8080/api/lighthouse'
 
 /**
  * Lighthouse実行
@@ -74,7 +74,7 @@ const reportLighthouse = async (url, emulation, outputFilename) => {
     }
   } catch (err) {
     // 失敗したときはエラー文を返す
-    return err
+    return err.toString()
   }
 }
 
@@ -83,29 +83,26 @@ const reportLighthouse = async (url, emulation, outputFilename) => {
  * @param {boolean} mode true: SP, false: PC
  */
 const processDatabaseURL = async mode => {
-  const data = await db.find({
-    [mode? 'sp': 'pc']: false
-  })
-    .limit(1)
-    .sort({created: 1})
-  // 未処理のデータがない場合は終了
-  if (data.length === 0) {
-    console.log(`未処理の ${mode? 'SP': 'PC'} データがありません`)
-    return false
-  }
-  // Lighthouse測定実行
-  const report = await reportLighthouse(
-    data[0].url,
-    mode? 'mobile': 'desktop',
-    `../nuxt/static/html/${data[0]._id}_${mode? 'sp': 'pc'}.html`)
-  console.log(data[0].url, report)
-  // データベース更新
-  return await db.update(
-    {_id: data[0]._id},
-    {
-      $set: {[mode? 'sp': 'pc']: report}
+  try {
+    const data = (await axios.get(`${endpoint}/?$filter=${mode? 'sp': 'pc'} $eq false&$limit=1&$orderby=created`)).data
+    // 未処理のデータがない場合は終了
+    if (data.length === 0) {
+      console.log(`未処理の ${mode? 'SP': 'PC'} データがありません`)
+      return false
     }
-  )
+    // Lighthouse測定実行
+    const report = await reportLighthouse(
+      data[0].url,
+      mode? 'mobile': 'desktop',
+      `../nuxt/static/html/${data[0]._id}_${mode? 'sp': 'pc'}.html`)
+    console.log(mode? 'SP': 'PC', data[0].url, report)
+    // データベース更新
+    return await axios.put(`${endpoint}/${data[0]._id}`, {
+      $set: {[mode? 'sp': 'pc']: report}
+    })
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 // 1分ごとに処理実行
