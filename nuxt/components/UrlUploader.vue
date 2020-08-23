@@ -55,7 +55,7 @@ export default {
     async uploadURLs(urls) {
       try {
         await axios.post(
-          'http://localhost:8080/lighthouse',
+          'http://localhost:8080/api/lighthouse',
           this.convertURLs(urls)
         )
         window.location.href = '/' + window.location.search // ページリロード

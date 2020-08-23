@@ -87,7 +87,7 @@ const processDatabaseURL = async mode => {
     [mode? 'sp': 'pc']: false
   })
     .limit(1)
-    .sort({created: -1})
+    .sort({created: 1})
   // 未処理のデータがない場合は終了
   if (data.length === 0) {
     console.log(`未処理の ${mode? 'SP': 'PC'} データがありません`)
@@ -97,7 +97,7 @@ const processDatabaseURL = async mode => {
   const report = await reportLighthouse(
     data[0].url,
     mode? 'mobile': 'desktop',
-    `../db/html/${data[0]._id}_${mode? 'sp': 'pc'}.html`)
+    `../nuxt/static/html/${data[0]._id}_${mode? 'sp': 'pc'}.html`)
   console.log(data[0].url, report)
   // データベース更新
   return await db.update(

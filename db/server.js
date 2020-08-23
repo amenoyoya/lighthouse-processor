@@ -17,7 +17,7 @@ const restApi = expressNedbRest()
 restApi.addDatastore('lighthouse', datastore)
 
 // setup express server to serve rest service
-app.use('/', restApi)
+app.use('/api/', restApi)
 
 app.listen(8080, '0.0.0.0', function () {
   console.log('NeDB REST API Server: http://localhost:8080')

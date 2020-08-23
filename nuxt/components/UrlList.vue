@@ -10,8 +10,22 @@
       <tbody>
         <tr class="border text-center even:bg-gray-200" v-for="data of list.items" :key="data._id">
           <td class="pl-4 pr-4 text-left">{{ data.url }}</td>
-          <td>{{ data.sp }}</td>
-          <td>{{ data.pc }}</td>
+          <td>
+            <a class="text-blue-500" :href="`/html/${data._id}_sp.html`"
+              v-if="typeof data.sp === 'object' && data.sp.score !== undefined">
+              {{ data.sp.score }}
+            </a>
+            <span v-else-if="data.sp === false">－</span>
+            <span v-else>失敗</span>
+          </td>
+          <td>
+            <a class="text-blue-500" :href="`/html/${data._id}_pc.html`"
+              v-if="typeof data.pc === 'object' && data.pc.score !== undefined">
+              {{ data.pc.score }}
+            </a>
+            <span v-else-if="data.pc === false">－</span>
+            <span v-else>失敗</span>
+          </td>
           <td>
             <button class="p-2 bg-red-500 text-white rounded-md" @click.prevent="deleteData(data)">削除</button>
           </td>
@@ -47,11 +61,11 @@ export default {
       // データリスト
       const list = {
         // データ総数
-        count: (await axios.get('http://localhost:8080/lighthouse?$count')).data
+        count: (await axios.get('http://localhost:8080/api/lighthouse?$count')).data
       }
       // カレントページのデータリスト
       list.items = (await axios.get(
-        `http://localhost:8080/lighthouse?$skip=${query.page > 0? (query.page - 1) * 50: 0}&$limit=50&$orderby=created${
+        `http://localhost:8080/api/lighthouse?$skip=${query.page > 0? (query.page - 1) * 50: 0}&$limit=50&$orderby=created${
           query.keyword && query.keyword.length > 0? '&$filter=url $regex "' + query.keyword + '"': ''
         }`)
       ).data
@@ -69,7 +83,7 @@ export default {
      */
     async deleteData(data) {
       try {
-        await axios.delete(`http://localhost:8080/lighthouse/${data._id}`)
+        await axios.delete(`http://localhost:8080/api/lighthouse/${data._id}`)
         window.location.href = '/' + window.location.search // ページリロード
       } catch (err) {
         console.log(err.response.data)

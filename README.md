@@ -36,6 +36,10 @@
 # install node_modules in ./ , ./db/ , ./nuxt/
 $ yarn setup
 
+# => Windows だと失敗するかもしれない
+## その場合は手動で以下のコマンドを実行
+$ yarn install && yarn --cwd db install && yarn --cwd nuxt install && yarn --cwd backend install
+
 # start servers
 ## nuxt dev server => http://localhost:3000
 ## nedb rest api server => http://localhost:8080

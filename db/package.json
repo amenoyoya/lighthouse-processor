@@ -1,9 +1,10 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
-    "express-nedb-rest": "^1.2.6"
+    "express-nedb-rest": "^1.2.6",
+    "nodemon": "^2.0.4"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   }
 }
