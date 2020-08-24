@@ -79,12 +79,43 @@ $ npx create-nuxt-app nuxt
 
 ## 既知の問題
 
-- NeDB の IO が遅い
-    - SQLite3, MySQL のような RDBS に変更するか、MongoDB に変更する
-    - もしくは Firebase のような外部データベースシステムを利用する
 - 現在の「URLリストアップロード」機能では大きなサイズのファイル（何万行レベルのURLリスト）をアップロードできない
     - tus プロトコルを使った分割アップロードに対応したい
     - もしくは、取り急ぎはURLリスト取り込み用のCLIを用意するだけで良いかも
 - 検索機能で、計測失敗したデータ等の検索ができない
 - WSL2 環境で Lighthouse 計測が実行できない
     - おそらく localhost IP の問題で Chrome ブラウザ実行 IP と上手く通信できていない
+
+***
+
+## Performance
+
+### 公式
+- Insert: `10,680 ops/s`
+- Find: `43,290 ops/s`
+- Update: `8,000 ops/s`
+- Remove: `11,750 ops/s`
+
+### Test
+[./tests/nedb.js](./tests/nedb.js)
+
+CPU: Core i7 2.60GHz, Memory: 32GB
+
+- Insert: `4,136 ops/s`
+    - 乱数生成等に時間がかかっているため、正確ではない
+- Load: `74,354 ops/s`
+- Find: `62,665 ops/s`
+- Update: `17,914 ops/s`
+
+### 比較
+https://www.sqlite.org/speed.html
+
+| DB (ops/s) | INSERT | FIND  | UPDATE | REMOVE |
+|    :--:    |  :--:  | :--:  |  :--:  |  :--:  |
+| PostgreSQL | 5,102  | 1,083 |  519   | 15,189 |
+|   MySQL    | 11,446 | 3,937 | 3,580  | 8,837  |
+|   SQLite   | 27,352 | 4,460 | 10,382 | 9,666  |
+|    NeDB    | 10,680 |43,290 | 8,000  | 11,750 |
+
+- NeDB 等の NoSQL は FIND が圧倒的に速い（代わりに複雑な FIND はできない）
+- NeDB は全体的に SQLite よりやや遅く、MySQL よりやや速い
