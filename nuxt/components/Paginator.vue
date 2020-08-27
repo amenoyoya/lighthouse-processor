@@ -30,22 +30,11 @@ export default {
      * @param {number} page
      */
     paginate(page) {
-      const query = this.getQueryJSON()
+      const query = querystring.parse(window.location.search.slice(1))
       delete query['']
       query.page = page
       window.location.href = this.baseURL + '?' + querystring.stringify(query)
     },
-
-    /**
-     * URLクエリをJSON形式で取得
-     */
-    getQueryJSON() {
-      return window.location.search
-        .slice(1)
-        .split('&')
-        .map(p => p.split('='))
-        .reduce((obj, [key, value]) => ({ ...obj, [key]: decodeURIComponent(value) }), {})
-    }
   }
 }
 </script>

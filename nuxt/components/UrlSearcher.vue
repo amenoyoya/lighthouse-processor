@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import querystring from 'querystring'
+
 export default {
   data() {
     return {
@@ -13,7 +15,7 @@ export default {
     }
   },
   mounted() {
-    const query = this.getQueryJSON()
+    const query = querystring.parse(window.location.search.slice(1))
     if (query.keyword) {
       this.keyword = decodeURIComponent(query.keyword)
     }
@@ -25,17 +27,6 @@ export default {
     searchURL() {
       window.location.href = `/?keyword=${encodeURIComponent(this.keyword)}`
     },
-
-    /**
-     * URLクエリをJSON形式で取得
-     */
-    getQueryJSON() {
-      return window.location.search
-        .slice(1)
-        .split('&')
-        .map(p => p.split('='))
-        .reduce((obj, [key, value]) => ({ ...obj, [key]: decodeURI(value) }), {})
-    }
   }
 }
 </script>

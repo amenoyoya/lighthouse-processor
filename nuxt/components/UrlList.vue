@@ -16,6 +16,7 @@
               {{ data.sp.score }}
             </a>
             <span v-else-if="data.sp === false">－</span>
+            <span v-else-if="data.sp === true">計測中</span>
             <span v-else>失敗</span>
           </td>
           <td>
@@ -24,6 +25,7 @@
               {{ data.pc.score }}
             </a>
             <span v-else-if="data.pc === false">－</span>
+            <span v-else-if="data.pc === true">計測中</span>
             <span v-else>失敗</span>
           </td>
           <td>
@@ -40,6 +42,7 @@
 
 <script>
 import axios from 'axios'
+import querystring from 'querystring'
 
 export default {
   data() {
@@ -57,7 +60,7 @@ export default {
      * @return {object{items: [], count, start, end}}
      */
     async getDataList() {
-      const query = this.getQueryJSON()
+      const query = querystring.parse(window.location.search.slice(1))
       // データリスト
       const list = {
         // データ総数
@@ -90,17 +93,6 @@ export default {
         alert('データを削除できませんでした')
       }
     },
-
-    /**
-     * URLクエリをJSON形式で取得
-     */
-    getQueryJSON() {
-      return window.location.search
-        .slice(1)
-        .split('&')
-        .map(p => p.split('='))
-        .reduce((obj, [key, value]) => ({ ...obj, [key]: decodeURIComponent(value) }), {})
-    }
   }
 }
 </script>

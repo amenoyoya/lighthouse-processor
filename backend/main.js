@@ -90,6 +90,10 @@ const processDatabaseURL = async mode => {
       console.log(`未処理の ${mode? 'SP': 'PC'} データがありません`)
       return false
     }
+    // 該当データに「実行中」フラグ（true）を設定
+    await axios.put(`${endpoint}/${data[0]._id}`, {
+      $set: {[mode? 'sp': 'pc']: true}
+    })
     // Lighthouse測定実行
     const report = await reportLighthouse(
       data[0].url,
@@ -105,8 +109,8 @@ const processDatabaseURL = async mode => {
   }
 }
 
-// 1分ごとに処理実行
-cron.scheduleJob('* * * * *', async () => {
+// 3秒ごとに処理実行
+cron.scheduleJob('*/3 * * * * *', async () => {
   await processDatabaseURL(false) // 未測定のPCスコア測定
   await processDatabaseURL(true) // 未測定のSPスコア測定
 })
