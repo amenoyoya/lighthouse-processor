@@ -109,8 +109,8 @@ const processDatabaseURL = async mode => {
   }
 }
 
-// 3秒ごとに処理実行
-cron.scheduleJob('*/3 * * * * *', async () => {
+// 30秒ごとに処理実行
+cron.scheduleJob('*/30 * * * * *', async () => {
   await processDatabaseURL(false) // 未測定のPCスコア測定
   await processDatabaseURL(true) // 未測定のSPスコア測定
 })
